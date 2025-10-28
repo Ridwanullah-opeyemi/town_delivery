@@ -8,53 +8,7 @@ const List = ({url}) => {
 
   const [list, setList] = useState([])
   const baseUrl = url;
-  // const kk = [
-  //   {
-  //     "_id": 1,
-  //     "name": "Margherita Pizza",
-  //     "description": "Classic cheese and tomato pizza with fresh basil.",
-  //     "price": 4500,
-  //     "category": "Pizza",
-  //     "image": "/src/assets/logo.png",
-  //     "available": true
-  //   },
-  //   {
-  //     "_id": 2,
-  //     "name": "Pepperoni Pizza",
-  //     "description": "Spicy pepperoni with mozzarella and tomato sauce.",
-  //     "price": 5000,
-  //     "category": "Pizza",
-  //     "image": "/src/assets/order_icon.png",
-  //     "available": true
-  //   },
-  //   {
-  //     "_id": 3,
-  //     "name": "Grilled Chicken Burger",
-  //     "description": "Juicy grilled chicken with lettuce and mayo.",
-  //     "price": 3200,
-  //     "category": "Burgers",
-  //     "image": "/images/burger-chicken.jpg",
-  //     "available": true
-  //   },
-  //   {
-  //     "_id": 4,
-  //     "name": "Beef Burger",
-  //     "description": "Classic beef patty with cheddar and caramelized onions.",
-  //     "price": 3500,
-  //     "category": "Burgers",
-  //     "image": "/images/burger-beef.jpg",
-  //     "available": true
-  //   },
-  //   {
-  //     "_id": 5,
-  //     "name": "French Fries",
-  //     "description": "Crispy golden fries with a side of ketchup.",
-  //     "price": 1500,
-  //     "category": "Sides",
-  //     "image": "/images/fries.jpg",
-  //     "available": true
-  //   }
-  // ]
+  
 
   const fetchList = async () => {
     try {
@@ -107,7 +61,7 @@ const List = ({url}) => {
         {list.map((item,index)=>{
           return(
             <div key={index} className="list_table_format">
-              <img src={`${baseUrl}/images/`+item.image} alt="" />
+              <img src={item.image} alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>${item.price}</p>
