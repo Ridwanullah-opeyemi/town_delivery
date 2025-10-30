@@ -7,7 +7,7 @@ import Order from "./pages/order/order"
 
 const App = ()=>{
 
-  const url = "http://localhost:4002"
+  const url = "https://orange-backend-79d9.onrender.com"
 
    return(
     <div>
