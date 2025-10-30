@@ -1,4 +1,11 @@
-.add{
+.flex_col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* MAIN LAYOUT */
+.add {
     width: 70%;
     margin-left: max(5vw, 25px);
     margin-top: 50px;
@@ -6,38 +13,87 @@
     font-size: 16px;
 }
 
-.add form{
+.add form {
     gap: 20px;
 }
 
-.add .add_img_upload{
+.add .add_img_upload {
     width: 120px;
 }
 
-.add .add_product_name, .add .add_product_description{
-    width: max(40%,280px);
+.add .add_product_name,
+.add .add_product_description {
+    width: max(40%, 280px);
 }
 
-.add_product_name input, .add_product_description textarea{
+.add_product_name input,
+.add_product_description textarea {
     padding: 10px;
-
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
 }
 
-.add_category_price{
+.add_category_price {
     display: flex;
     gap: 30px;
 }
 
-.add_category_price select,.add_category_price input{
+.add_category_price select,
+.add_category_price input {
     max-width: 120px;
     padding: 10px;
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
 }
 
-.add_btn{
+.add_btn {
     max-width: 120px;
     border: none;
     padding: 10px;
-    background-color: #000;
+    background-color: orange;
     color: #fff;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.add_btn:hover:not(:disabled) {
+    background-color: #333;
+}
+
+.add_btn:disabled {
+    background-color: #ffa50088;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.status-message {
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: center;
+    border: 1px solid;
+    width: max(40%, 280px);
+}
+
+.status-message.success {
+    background-color: #e6ffe6;
+    color: #006600;
+    border-color: #00b300;
+}
+
+.status-message.error {
+    background-color: #ffe6e6;
+    color: #cc0000;
+    border-color: #ff0000;
+}
+
+.add_img_upload label img {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    border: 1px dashed #c9c9c9;
+    border-radius: 4px;
+    object-fit: cover;
 }
