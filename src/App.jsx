@@ -1,28 +1,19 @@
-import { Route, Routes } from "react-router-dom"
-import NavBar from "./component/navBar/navBar"
-import SideBar from "./component/sideBar/sideBar"
-import Add from "./pages/add/add"
-import List from "./pages/list/list"
-import Order from "./pages/order/order"
+import React from 'react';
+// Import Routes instead of Switch
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-const App = ()=>{
+import LoginPage from './component/sign/sign';
+import Mains from './mains';
 
-  const url = "https://orange-backend-79d9.onrender.com"
 
-   return(
-    <div>
-      <NavBar/>
-      <hr />
-      <div className="app_container">
-        <SideBar/> 
-        <Routes>
-          <Route path="/" element={<Add url={url}/>}/>
-          <Route path="/add" element={<Add url={url}/>}/>
-          <Route path="/list" element={<List url={url}/>}/>
-          <Route path="/order" element={<Order url={url}/>}/>
-        </Routes>
-      </div>
-    </div>   )
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      {/* The /main/* path is crucial for enabling nested routes inside Mains */}
+      <Route path="/main/*" element={<Mains />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
